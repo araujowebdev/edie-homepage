@@ -1,0 +1,15 @@
+@use "colors" as c;
+
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background-color: c.$almost-white;
+  color: c.$almost-black;
+}
+
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 10px;
+}

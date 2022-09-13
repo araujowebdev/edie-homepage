@@ -1,1 +1,1 @@
-"use strict";
+"use strict";var btnMobile=document.querySelector("header button"),header=document.querySelector("header");btnMobile.addEventListener("click",function(){header.classList.toggle("mobile-menu")}),btnMobile.addEventListener("touchstart",function(e){var t=document.getElementById("nav"),t=(t.classList.toggle("menu-active"),t.classList.contains("menu-active"));e.currentTarget.setAttribute("aria-expanded",t),t?e.currentTarget.setAttribute("aria-label","Close Menu"):e.currentTarget.setAttribute("aria-label","Open Menu")});

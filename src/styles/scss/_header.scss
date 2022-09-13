@@ -1,0 +1,145 @@
+@use "colors" as c;
+
+header {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: space-between;
+  color: c.$dark-gray;
+
+  // logo
+  > a {
+    font-family: "Heebo", sans-serif;
+    font-size: 36px;
+  }
+
+  // navigation
+  nav {
+    display: flex;
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      font-weight: 500;
+      font-size: 24px;
+
+      li {
+        padding: 8px 0;
+        transition: 0.4s;
+
+        &:hover {
+          box-shadow: inset 0 -2px c.$dark-gray;
+        }
+      }
+    }
+  }
+
+  // mobile button
+  button {
+    width: 50px;
+    height: 50px;
+    display: none;
+    position: absolute;
+    right: 0;
+    background: none;
+    cursor: pointer;
+
+    span,
+    span::before,
+    span::after {
+      display: block;
+      width: 30px;
+      height: 3px;
+      background-color: c.$dark-gray;
+      margin: 0 auto;
+      transition: 0.4s;
+    }
+
+    span::before,
+    span::after {
+      content: "";
+      position: relative;
+    }
+    span::before {
+      top: -10.5px;
+    }
+
+    span::after {
+      bottom: -7.5px;
+    }
+  }
+}
+
+// mobile menu
+.mobile-menu {
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+
+  // logo
+  > a {
+    position: absolute;
+    top: 14px;
+    left: 10px;
+  }
+
+  // mobile button
+  button {
+    top: 25px;
+
+    span {
+      transform: rotate(-45deg);
+
+      &::before {
+        transform: rotate(90deg);
+        top: 0px;
+      }
+
+      &::after {
+        transform: rotate(90deg);
+        bottom: 3px;
+      }
+    }
+  }
+
+  // navigation
+  nav {
+    display: block;
+    width: 100%;
+
+    ul {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
+
+// current page
+.page-active {
+  box-shadow: inset 0 -2px c.$dark-gray;
+
+  a {
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 799.98px) {
+  header {
+    height: 64px;
+
+    button {
+      display: block;
+    }
+
+    nav {
+      display: none;
+    }
+  }
+
+  .mobile-menu {
+    button {
+      top: 7px;
+    }
+  }
+}
