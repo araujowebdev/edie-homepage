@@ -52,6 +52,7 @@ main {
         height: 100%;
         position: absolute;
         padding-left: 24px;
+        padding-right: 110px;
 
         &::placeholder {
           font-weight: 500;
@@ -114,6 +115,7 @@ main {
 
         input {
           padding-left: 16px;
+          padding-right: 88px;
         }
 
         button {
