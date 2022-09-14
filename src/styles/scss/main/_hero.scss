@@ -1,0 +1,56 @@
+@use "../colors" as c;
+
+main {
+  .hero {
+    h2 {
+      max-width: 540px;
+      font-weight: 500;
+      font-size: 3rem;
+      line-height: 4.5rem;
+      color: c.$dark-gray;
+      margin-bottom: 40px;
+      margin-left: 16%;
+    }
+
+    h3 {
+      font-weight: 500;
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+      color: c.$fluffy-blue;
+      margin-top: 90px;
+      margin-bottom: 16px;
+      margin-left: 16%;
+    }
+
+    div {
+      width: 100%;
+
+      img {
+        width: 100%;
+        border-radius: 18px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 799.98px) {
+  main {
+    .hero {
+      h2 {
+        max-width: 272px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+        margin-bottom: 15px;
+        margin-left: 8.46%;
+      }
+
+      h3 {
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        margin-top: 32px;
+        margin-bottom: unset;
+        margin-left: 8.46%;
+      }
+    }
+  }
+}
