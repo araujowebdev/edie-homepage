@@ -1,0 +1,126 @@
+@use "../colors" as c;
+
+main {
+  .get-email {
+    max-width: 366px;
+    margin-left: 16%;
+
+    h2 {
+      margin-bottom: 40px;
+      font-weight: 500;
+      font-size: 3rem;
+      line-height: 4.5rem;
+      color: c.$dark-gray;
+    }
+
+    p:nth-child(2) {
+      font-size: 1.125rem;
+      line-height: 1.6875rem;
+      color: c.$medium-gray;
+      margin-bottom: 40px;
+    }
+
+    p:nth-child(3) {
+      font-weight: 500;
+      font-size: 0.875rem;
+      line-height: 1.3125rem;
+      color: c.$light-gray;
+      margin-bottom: 8px;
+    }
+
+    div {
+      width: 350px;
+      height: 57px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-radius: 12px;
+      background-color: c.$almost-almost-white;
+      padding: 4px;
+      position: relative;
+      margin-bottom: 200px;
+
+      input,
+      input::placeholder,
+      button {
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+      }
+
+      input {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding-left: 24px;
+
+        &::placeholder {
+          font-weight: 500;
+          color: c.$other-gray;
+        }
+      }
+
+      button {
+        height: calc(100% - 8px);
+        background-color: c.$fluffy-blue;
+        border-radius: 12px;
+        padding-left: 32px;
+        padding-right: 32px;
+        font-weight: 500;
+        color: c.$almost-almost-white;
+        position: absolute;
+        right: 4px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 799.98px) {
+  main {
+    .get-email {
+      margin-left: 8.46%;
+
+      h2 {
+        max-width: 227px;
+        margin-bottom: 32px;
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+      }
+
+      p:nth-child(2) {
+        max-width: 275px;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        margin-bottom: 32px;
+      }
+
+      p:nth-child(3) {
+        font-size: 0.625rem;
+        line-height: 1rem;
+        margin-bottom: unset;
+      }
+
+      div {
+        width: 320px;
+        height: 48px;
+        margin-bottom: 100px;
+
+        input,
+        input::placeholder,
+        button {
+          font-size: 0.875rem;
+          line-height: 1.6875rem;
+        }
+
+        input {
+          padding-left: 16px;
+        }
+
+        button {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+    }
+  }
+}

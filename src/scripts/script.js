@@ -3,6 +3,10 @@ const btnMobile = document.querySelector("header button");
 const header = document.querySelector("header");
 btnMobile.addEventListener("click", () => {
   header.classList.toggle("mobile-menu");
+
+  // hide content
+  const main = document.querySelector("main");
+  main.classList.toggle("hide-content");
 });
 
 // menu - accessibility
