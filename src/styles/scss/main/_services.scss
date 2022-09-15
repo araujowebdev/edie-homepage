@@ -1,0 +1,126 @@
+@use "../colors" as c;
+
+main {
+  .services {
+    padding-left: 10%;
+    padding-right: 10%;
+
+    h2 {
+      max-width: 344px;
+      font-weight: 500;
+      font-size: 2.25rem;
+      line-height: 3.375rem;
+      color: c.$dark-gray;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      margin-bottom: 196px;
+
+      &__item {
+        max-width: 340px;
+        padding: 46px 34px;
+        transition: 0.4s;
+
+        span {
+          width: 64px;
+          height: 64px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 16px;
+          margin-bottom: 32px;
+          color: c.$almost-white;
+          font-size: 2rem;
+        }
+
+        h3 {
+          font-weight: 700;
+          font-size: 1.5rem;
+          line-height: 2.25rem;
+          color: c.$dark-gray;
+          margin-bottom: 24px;
+        }
+
+        p {
+          font-size: 1rem;
+          line-height: 1.5rem;
+          color: c.$medium-gray;
+          margin-bottom: 32px;
+        }
+
+        button {
+          background-color: c.$very-light-gray;
+          border-radius: 12px;
+          padding: 8px 12px;
+          font-weight: 500;
+          font-size: 1rem;
+          line-height: 1.5rem;
+          color: c.$light-gray;
+          transition: 0.4s;
+        }
+
+        &:hover {
+          box-shadow: 0px 10px 30px rgba(51, 51, 51, 0.1);
+          border-radius: 24px;
+
+          button {
+            background-color: c.$fluffy-blue;
+            color: c.$almost-white;
+            cursor: pointer;
+          }
+        }
+      }
+
+      &__item:nth-child(1) {
+        span {
+          background-color: c.$fluffy-blue;
+        }
+      }
+
+      &__item:nth-child(2) {
+        span {
+          background-color: c.$green;
+        }
+      }
+
+      &__item:nth-child(3) {
+        span {
+          background-color: c.$salmon;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 899.98px) {
+  main {
+    .services {
+      .cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 599.98px) {
+  main {
+    .services {
+      h2 {
+        font-size: 1.5rem;
+        line-height: 2.25rem;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        margin-bottom: 96px;
+
+        &__item {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+}
