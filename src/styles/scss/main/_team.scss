@@ -1,0 +1,82 @@
+@use "../colors" as c;
+
+main {
+  .team {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-bottom: 196px;
+
+    &__about {
+      h3 {
+        font-weight: 500;
+        font-size: 1.125rem;
+        line-height: 1.6875rem;
+        color: c.$salmon;
+        margin-bottom: 8px;
+      }
+
+      h2 {
+        font-weight: 500;
+        font-size: 2.25rem;
+        line-height: 3.375rem;
+        color: c.$dark-gray;
+        margin-bottom: 16px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: c.$medium-gray;
+      }
+    }
+
+    &__members {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 3.78%;
+      align-items: center;
+
+      > div:first-child {
+        display: grid;
+        gap: 4.11%;
+        width: 45.8%;
+      }
+
+      &--one {
+        width: 89.5%;
+      }
+
+      &--three {
+        width: 50.36%;
+      }
+
+      img {
+        border-radius: 9.24%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1189.98px) {
+  main {
+    .team {
+      flex-direction: column;
+      gap: 36px;
+      align-items: inherit;
+      margin-bottom: 96px;
+    }
+  }
+}
+
+@media screen and (max-width: 599.98px) {
+  main {
+    .team {
+      padding-left: unset;
+      padding-right: unset;
+    }
+  }
+}
