@@ -4,7 +4,6 @@ main {
   .portfolio {
     padding-left: 10%;
     padding-right: 10%;
-    position: relative;
     margin-bottom: 224px;
 
     h2 {
@@ -55,13 +54,12 @@ main {
     a {
       display: flex;
       align-items: center;
+      justify-content: flex-end;
       gap: 16px;
       color: c.$fluffy-blue;
       font-weight: 500;
       font-size: 1.5rem;
       line-height: 2.25rem;
-      position: absolute;
-      right: 10%;
       cursor: pointer;
     }
   }
@@ -114,7 +112,7 @@ main {
       a {
         font-size: 1.125rem;
         line-height: 1.6875rem;
-        right: unset;
+        justify-content: flex-start;
       }
     }
   }
