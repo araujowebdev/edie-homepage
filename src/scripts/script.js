@@ -13,12 +13,11 @@ btnMobile.addEventListener("click", () => {
 });
 
 const windowWidth = window.innerWidth;
-if(!(windowWidth < 800)) {
-    window.addEventListener("scroll", () => {
-        // let header = document.querySelector(".header-bg");
-        header.classList.toggle("sticky", window.scrollY > 0);
-    });
-};
+if (!(windowWidth < 800)) {
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("sticky", window.scrollY > 0);
+  });
+}
 
 // menu - accessibility
 btnMobile.addEventListener("touchstart", (e) => {
@@ -42,18 +41,18 @@ function scrollToSection(e) {
   e.preventDefault();
   const href = e.currentTarget.getAttribute("href");
   const section = document.querySelector(href);
+  const topSection = section.offsetTop - 100;
 
   header.classList.remove("mobile-menu");
   main.classList.remove("hide-content");
   footer.classList.remove("hide-content");
 
-  section.scrollIntoView({
+  window.scrollTo({
+    top: topSection,
     behavior: "smooth",
-    block: "start",
   });
 }
 
 navInternalLinks.forEach((link) => {
   link.addEventListener("click", scrollToSection);
 });
-
