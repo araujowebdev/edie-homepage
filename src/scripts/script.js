@@ -1,12 +1,15 @@
 // mobile menu
 const btnMobile = document.querySelector("header button");
 const header = document.querySelector("header");
+const main = document.querySelector("main");
+const footer = document.querySelector("footer");
+
 btnMobile.addEventListener("click", () => {
   header.classList.toggle("mobile-menu");
 
   // hide content
-  const main = document.querySelector("main");
   main.classList.toggle("hide-content");
+  footer.classList.toggle("hide-content");
 });
 
 // menu - accessibility
@@ -20,4 +23,28 @@ btnMobile.addEventListener("touchstart", (e) => {
   } else {
     e.currentTarget.setAttribute("aria-label", "Open Menu");
   }
+});
+
+// Internal navigation
+const navInternalLinks = document.querySelectorAll(
+  '.nav-internal-links a[href^="#"]'
+);
+
+function scrollToSection(e) {
+  e.preventDefault();
+  const href = e.currentTarget.getAttribute("href");
+  const section = document.querySelector(href);
+
+  header.classList.remove("mobile-menu");
+  main.classList.remove("hide-content");
+  footer.classList.remove("hide-content");
+
+  section.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+  });
+}
+
+navInternalLinks.forEach((link) => {
+  link.addEventListener("click", scrollToSection);
 });
