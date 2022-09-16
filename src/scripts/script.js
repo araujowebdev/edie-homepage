@@ -41,12 +41,12 @@ function scrollToSection(e) {
   e.preventDefault();
   const href = e.currentTarget.getAttribute("href");
   const section = document.querySelector(href);
-  const topSection = section.offsetTop - 100;
-
+  
   header.classList.remove("mobile-menu");
   main.classList.remove("hide-content");
   footer.classList.remove("hide-content");
-
+  
+  const topSection = section.offsetTop - 100;
   window.scrollTo({
     top: topSection,
     behavior: "smooth",
