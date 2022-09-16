@@ -12,6 +12,14 @@ btnMobile.addEventListener("click", () => {
   footer.classList.toggle("hide-content");
 });
 
+const windowWidth = window.innerWidth;
+if(!(windowWidth < 800)) {
+    window.addEventListener("scroll", () => {
+        // let header = document.querySelector(".header-bg");
+        header.classList.toggle("sticky", window.scrollY > 0);
+    });
+};
+
 // menu - accessibility
 btnMobile.addEventListener("touchstart", (e) => {
   const nav = document.getElementById("nav");
@@ -48,3 +56,4 @@ function scrollToSection(e) {
 navInternalLinks.forEach((link) => {
   link.addEventListener("click", scrollToSection);
 });
+
